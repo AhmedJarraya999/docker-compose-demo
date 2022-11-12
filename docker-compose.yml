@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  web1:
+    build: ./web1/
+    container_name: web1
+    ports:
+      - "80:80"
+  web2:
+    build: ./web2/
+    container_name: web2
+    ports:
+      -  "81:80"
+  lb:
+    build: ./haproxy
+    container_name: lbalancer
+    ports:
+       - "82:80" 
